@@ -57,6 +57,9 @@ jobs:
       RUNNER_DEBUG: 1
 
     steps:
+    - name: Clear Runner Cache
+      run: rm -rf ${{ runner.tool_cache }}/*
+        
     - uses: actions/checkout@v2
       with:
         lfs: true
